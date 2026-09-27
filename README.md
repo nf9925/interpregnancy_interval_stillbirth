@@ -51,4 +51,5 @@ Seventy stillbirth events is a thin base for a model carrying four covariates, c
 References
 
 Meem, S.A. (2025) Stillbirths in Bangladesh: A preventable public health emergency, The Business Standard. Available at: https://www.tbsnews.net/features/panorama/stillbirths-bangladesh-preventable-public-health-emergency-1154826. 
+
 Stephansson, O., Dickman, P.W. and Cnattingius, S. (2003) ‘The influence of interpregnancy interval on the subsequent risk of stillbirth and early neonatal death’, Obstetrics &amp; Gynecology, 102(1), pp. 101–108. doi:10.1016/s0029-7844(03)00366-1. 
