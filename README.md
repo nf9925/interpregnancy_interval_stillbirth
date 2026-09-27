@@ -4,9 +4,9 @@ A survival analysis project built on the 2022 Bangladesh Demographic and Health 
 
 Why this question
 
-The United Nations Inter-Agency Group for Child Mortality Estimation (UN IGME) reports that Bangladesh records more than 63,000 stillbirths every year. Roughly one baby is stillborn for every 41 births, the highest rate anywhere in South Asia. Stillbirth also remains one of the more understudied outcomes in global maternal and child health relative to its actual scale, which is part of why this project treats it as the outcome worth building a full analysis around, rather than a side note to live birth outcomes.
+The United Nations Inter-Agency Group for Child Mortality Estimation (UN IGME) reports that Bangladesh records more than 63,000 stillbirths every year (Meem, 2025). Roughly one baby is stillborn for every 41 births, the highest rate anywhere in South Asia. Stillbirth also remains one of the more understudied outcomes in global maternal and child health relative to its actual scale, which is part of why this project treats it as the outcome worth building a full analysis around, rather than a side note to live birth outcomes.
 
-The specific research design here follows Stephansson, Dickman, and Cnattingius, "The influence of interpregnancy interval on the subsequent risk of stillbirth and early neonatal death," published in Obstetrics and Gynaecology in 2003 (PMID 12850614). That paper used Swedish national birth registry data. The project asks the same underlying question in a very different setting: a nationally representative household survey in Bangladesh, using DHS's own sampling weights, clusters, and strata to keep that national claim honest.
+The specific research design here follows Stephansson, Dickman, and Cnattingius, "The influence of interpregnancy interval on the subsequent risk of stillbirth and early neonatal death," published in Obstetrics and Gynaecology in 2003 (PMID12850614) (Stephansson et al., 2003). That paper used Swedish national birth registry data. The project asks the same underlying question in a very different setting: a nationally representative household survey in Bangladesh, using DHS's own sampling weights, clusters, and strata to keep that national claim honest.
 
 Data source
 
@@ -47,3 +47,8 @@ Packages needed: haven, dplyr, ggplot2, survival, and survey.
 Honest limitations
 
 Seventy stillbirth events is a thin base for a model carrying four covariates, commonly cited guidance suggests something closer to ten to twenty events per predictor. Confidence intervals throughout this project are correspondingly wide, and the exact hazard ratio values are best read as a rough range rather than a precise estimate. Gestational duration is only recorded in completed months in this data, not weeks or days, which produces heavy ties in the survival model, handled here with the Efron approximation rather than ignored. And DHS's antenatal visit count only has non-missing values for a recent recall subset of pregnancies, which is the main reason the final analytic sample is far smaller than the raw number of stillbirths in the full dataset, a property of how DHS collected this data, not a choice made in this analysis.
+
+References
+
+Meem, S.A. (2025) Stillbirths in Bangladesh: A preventable public health emergency, The Business Standard. Available at: https://www.tbsnews.net/features/panorama/stillbirths-bangladesh-preventable-public-health-emergency-1154826. 
+Stephansson, O., Dickman, P.W. and Cnattingius, S. (2003) ‘The influence of interpregnancy interval on the subsequent risk of stillbirth and early neonatal death’, Obstetrics &amp; Gynecology, 102(1), pp. 101–108. doi:10.1016/s0029-7844(03)00366-1. 
