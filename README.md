@@ -1,4 +1,4 @@
-# interpregnancy_interval_stillbirth
+Interpregnancy_interval_stillbirth
 
 A survival analysis project built on the 2022 Bangladesh Demographic and Health Survey, asking whether the length of time since a woman's previous pregnancy, alongside her age, how many pregnancies she has had before, and how much antenatal care she received, is associated with her risk of stillbirth in the pregnancy that follows.
 
