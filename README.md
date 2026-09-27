@@ -16,13 +16,13 @@ None of that data lives in this repository. DHS microdata is only available afte
 
 Methods, in brief
 
-The first half of scripts/analysis.R builds one analytic dataset from the three raw files. Stillbirth is defined as a pregnancy ending in fetal death at seven months of gestation or more, matching the same definition on both the stillbirth and live birth sides of the comparison, the same convention Stephansson's paper used. Interpregnancy interval is calculated from the gap between consecutive pregnancy end dates for the same woman, with a dedicated fix for twin pregnancies that would otherwise be double-counted. Because only 70 stillbirth events exist in the final sample, the interval gets collapsed into three categories, short, reference, and long, rather than the finer five group split a larger sample could support.
+The first half of scripts/analysis.R builds one analytic dataset from the three raw files. Stillbirth is defined as a pregnancy ending in fetal death at seven months of gestation or more, matching the same definition on both the stillbirth and live birth sides of the comparison, the same convention Stephansson's paper used. Interpregnancy interval is calculated from the gap between consecutive pregnancy end dates for the same woman, with a dedicated fix for twin pregnancies that would otherwise be double-counted. Because the final sample has only 70 stillbirth events, the interval is collapsed into three categories, short, reference, and long, rather than the finer five-group split a larger sample could support.
 
 The second half of the same script builds Kaplan-Meier curves and a log-rank test as a first, unadjusted look at whether the three interval groups differ, then fits a Cox proportional hazards model two ways, once treating the sample as an ordinary independent sample, and once properly accounting for DHS's actual cluster and stratified sampling design through the survey package. Both versions are compared directly, in a labelled table and a forest plot, rather than only reporting whichever version looked more convincing.
 
 Key finding
 
-The naive, unweighted model suggested a real effect, pregnancies following a short interval showed a statistically significant 91 percent higher hazard of stillbirth. That result did not survive proper adjustment for DHS's survey design, the same comparison in the correctly weighted model came back with a hazard ratio of 1.45 and a p-value of 0.23, no longer significant. The one result that held up under both versions of the model was antenatal care, more visits were associated with meaningfully lower stillbirth risk in both the naive and the survey-adjusted model.
+The naive, unweighted model suggested a real effect, pregnancies following a short interval showed a statistically significant 91 percent higher hazard of stillbirth. That result did not survive proper adjustment for DHS's survey design, the same comparison in the correctly weighted model came back with a hazard ratio of 1.45 and a p-value of 0.23, no longer significant. The one result that held up across both model versions was antenatal care: more visits were associated with meaningfully lower stillbirth risk in both the naive and survey-adjusted models.
 
 The full numbers behind that comparison are in outputs/comparison_table.csv, and the same comparison is drawn out visually in outputs/forest_plot.png.
 
@@ -32,7 +32,7 @@ Repository structure
 ├── LICENSE
 ├── .gitignore
 ├── scripts/
-│   └── analysis.R                    Builds the analytic dataset, then runs the full survival analysis
+│   └── stillbirth_survival_analysis_data_prep-v3.R                    Builds the analytic dataset, then runs the full survival analysis
 └── outputs/
     ├── comparison_table.csv             Hazard ratios, 95% CIs, and p-values, naive vs survey-adjusted
     ├── kaplan_meier_group_summary.csv   Sample size and stillbirth rate by interval group
